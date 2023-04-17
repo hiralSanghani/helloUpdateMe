@@ -13,8 +13,8 @@ jobs:
       - name: Auto-comment
         uses: peter-evans/auto-comment@v1.5.0
         with:
-          issue-token: ${{ 1 }}
-          repo-token: ${{ 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 }}
+          issue-token: 1
+          repo-token: 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
           enable-issue-token: true
           enable-repo-token: true
           reactions: '+1'
