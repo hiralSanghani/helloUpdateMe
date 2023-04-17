@@ -20,4 +20,4 @@ jobs:
           reactions: '+1'
           body: |
             Thanks for raising this issue! If you need help, please let us know and we'll do our best to assist you.
-        if: contains(github.event.issue.labels.*.name, 'help')
+        if: contains(github.event.issue.labels.*.name, 'bug')
