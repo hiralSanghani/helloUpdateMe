@@ -11,7 +11,7 @@
 #       - name: Install dependencies
 #         run: npm install
 #       - name: Auto-comment
-#         uses: peter-evans/auto-comment@v1.5.0
+#         uses: peter-evans/create-or-update-comment@v3
 #         with:
 #           issue-token: 1
 #           repo-token: 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
@@ -23,15 +23,4 @@
 #         if: contains(github.event.issue.labels.*.name, 'help-wanted')
 
 
-
- name: Create comment
-        uses: peter-evans/create-or-update-comment@v3
-        with:
-          issue-number: 1
-          body: |
-            This is a multi-line test comment
-            - With GitHub **Markdown** :sparkles:
-            - Created by [create-or-update-comment][1]
-
-            [1]: https://github.com/peter-evans/create-or-update-comment
-          reactions: '+1'
+ 
