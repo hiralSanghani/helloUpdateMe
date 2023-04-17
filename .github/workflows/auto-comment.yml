@@ -1,23 +1,18 @@
-name: Auto-comment on help label
+name: Add comment
 on:
   issues:
-    types: [labeled]
+    types:
+      - labeled
 jobs:
-  auto-comment:
+  add-comment:
+    if: github.event.label.name == 'help-wanted'
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Install dependencies
-        run: npm install
-      - name: Auto-comment
-        uses: peter-evans/auto-comment@v1.5.0
+      - name: Add comment
+        uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
         with:
-          issue-token: 1
-          repo-token: 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
-          enable-issue-token: true
-          enable-repo-token: true
-          reactions: '+1'
+          issue-number: ${{ 1 }}
           body: |
-            Thanks for raising this issue! If you need help, please let us know and we'll do our best to assist you.
-        # if: contains(github.event.issue.labels.*.name, 'bug')
+            This issue is available for anyone to work on. **Make sure to reference this issue in your pull request.** :sparkles: Thank you for your contribution! :sparkles:
